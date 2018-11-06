@@ -241,3 +241,25 @@
     (if (zerop n)
 	nil
 	(nth (random n) body))))
+
+(defun rebase-path (path base)
+  (let ((newpath (merge-pathnames path base)))
+    (cond ((or (uiop:pathname-equal newpath base) 
+	       (not (uiop:subpathp newpath base)))
+	   (error "not a subpath
+~a
+~a" path newpath))
+	  (t
+	   newpath))))
+
+(defmacro this-file ()
+  `(etouq (or *compile-file-truename*
+	      *load-truename*)))
+
+(eval-always
+  (defun file-directory (value)
+    (make-pathname :host (pathname-host value)
+		   :directory (pathname-directory value))))
+
+(defmacro this-directory ()
+  `(etouq (file-directory (this-file))))

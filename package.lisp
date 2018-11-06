@@ -42,4 +42,9 @@
    #:print-bits)
 
   (:export
-   #:any))
+   #:any)
+
+  (:export
+   #:this-file
+   #:this-directory
+   #:rebase-path))
