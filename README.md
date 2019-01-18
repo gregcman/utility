@@ -6,13 +6,8 @@ A collection of useful macros and functions I use in almost every project.
 
 ## Installing utility
 
-Since this project is not yet available in the latest [QuickLisp](https://www.quicklisp.org/beta/ "QuickLisp") distribution, it has to be copied to your local-projects folder:
-```bash
-cd $HOME/quicklisp/local-projects
-git clone https://github.com/terminal625/utility.git
-```
 
-After the files are copied, we can use [QuickLisp](https://www.quicklisp.org/beta/ "QuickLisp") to load utility:
+We can use [QuickLisp](https://www.quicklisp.org/beta/ "QuickLisp") to load utility:
 ```lisp
 (ql:quickload :utility)
 ```
